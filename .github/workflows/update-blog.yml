@@ -1,0 +1,36 @@
+name: 블로그 카드 갱신
+
+on:
+  schedule:
+    # 한국 시간 10:30, 13:30, 20:30, 23:30 (UTC 기준으로 적는다)
+    - cron: '30 1,4,11,14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-blog
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 블로그 최신 글 읽기
+        run: node scripts/update-blog.mjs
+      - name: 바뀐 내용이 있으면 올리기
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog.json img/blog
+          if git diff --cached --quiet; then
+            echo "바뀐 내용 없음"
+          else
+            git commit -m "블로그 카드 갱신"
+            git push
+          fi
