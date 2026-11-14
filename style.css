@@ -600,3 +600,24 @@ section.s.dark{background:var(--gd);color:#fff}
  .cta3{padding:52px 0}.cta3 h2{font-size:25px}
  .wall{gap:14px 12px;padding:22px 14px}.wall img{height:112px}
 }
+
+/* ---- 11/14 7차: 교재 표지를 종류(줄)와 수준(칸)으로 정리 ---- */
+.tbm{margin-top:40px;border-top:1.5px solid var(--gd)}
+.tbm-h,.tbm-r{display:grid;grid-template-columns:132px minmax(0,1fr) minmax(0,1fr)}
+.tbm-h{background:var(--paper);border-bottom:1px solid var(--line)}
+.tbm-h span{padding:13px 26px;font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--g)}
+.tbm-h span + span,.tbm-r .c{border-left:1px solid var(--line)}
+.tbm-r{border-bottom:1px solid var(--line);align-items:stretch}
+.tbm-r > b{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:-.02em;padding:30px 0 0;line-height:1.4}
+.tbm-r .c{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;padding:26px 26px 28px;min-height:60px}
+.tbm-r .c img{height:122px;width:auto;box-shadow:0 12px 20px -12px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.tbm-r .c img:hover{transform:translateY(-6px)}
+@media (max-width:980px){
+ .tbm-h{display:none}
+ .tbm-r{grid-template-columns:1fr;padding:22px 0 8px}
+ .tbm-r > b{padding:0;font-size:18px}
+ .tbm-r .c{border-left:0;padding:0 0 18px;gap:8px;margin-top:12px}
+ .tbm-r .c:before{content:attr(data-l);flex:0 0 100%;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--g)}
+ .tbm-r .c:empty{display:none}
+ .tbm-r .c img{height:84px}
+}
