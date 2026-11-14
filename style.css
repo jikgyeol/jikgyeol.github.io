@@ -624,3 +624,17 @@ section.s.dark{background:var(--gd);color:#fff}
 
 /* 11/14 8차: 교양서 표시 */
 .wb .ar.ko{font-family:Pretendard,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:4px 9px 3px}
+
+/* ---- 11/14 9차: 휴대폰 고정 상담 버튼 · 휴대폰에서 길이 줄이기 ---- */
+.mcta{display:none}
+@media (max-width:980px){
+ .mcta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;align-items:center;justify-content:center;gap:12px;height:56px;background:var(--gd);color:#fff;font-weight:700;font-size:16px;box-shadow:0 -6px 18px -8px rgba(0,0,0,.35);padding-bottom:env(safe-area-inset-bottom)}
+ body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+ .blog .card:nth-child(n+4){display:none}
+ .card .tile{height:132px}
+ .blog .card .tile{height:190px}
+ .albs{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;padding-bottom:10px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+ .albs .alb{flex:0 0 42%;scroll-snap-align:start;margin:0}
+ .posters img{flex:0 0 30%}
+ .lr{padding:32px 0}
+}
