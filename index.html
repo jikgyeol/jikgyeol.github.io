@@ -7,7 +7,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hahmlet:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=20261114d">
+<link rel="stylesheet" href="style.css?v=20261115a">
 <script>document.documentElement.classList.add("js")</script>
 </head><body>
 <header class="hd"><div class="wrap">
@@ -32,7 +32,7 @@
   <h2 class="h2s rv">국내파로 배운 영어를<br>15년 동안 현장에서 확인했습니다</h2>
   <p class="body rv d1">영어를 가르치는 게 꿈이었습니다. 한국에서 단어를 외우고 문장을 뜯어보며 영어를 익혔고, 그 방식이 틀리지 않았다는 걸 번역 현장과 미국 실리콘밸리 회사에서 매일 확인했습니다.</p>
   <p class="body rv d1" style="margin-top:12px">단어는 문장 속에서, 문장은 글의 흐름 속에서 만나야 내 것이 됩니다. 직결영어의 수업은 그 확신 위에 있습니다.</p>
-  <dl class="bio rv d2"><dt>수능</dt><dd>언어·외국어 영역 만점</dd><dt>학력</dt><dd>강원대학교 영어교육과 인문대 수석 입학, 학과 수석 조기 졸업</dd><dt>자격</dt><dd>중등학교 정교사(영어) 2급</dd><dt>영어</dt><dd>읽기·듣기·쓰기 CEFR C2 인증</dd><dt>지도</dt><dd>고등 전문 과외 4년 (수능, 외고 입시, 영어 특기자 전형)</dd><dt>번역</dt><dd>글로벌 OTT 플랫폼 영한 자막 15년 이상</dd><dt>실무</dt><dd>미국 실리콘밸리 현지화 전문 기업 7년 이상</dd></dl>
+  <dl class="bio rv d2"><dt>수능</dt><dd>언어·외국어 영역 만점</dd><dt>학력</dt><dd>강원대학교 영어교육과 인문대 수석 입학, 학과 수석 조기 졸업</dd><dt>자격</dt><dd>중등학교 정교사(영어) 2급</dd><dt>영어</dt><dd>읽기·듣기·쓰기 <span class="tip"><button type="button" class="tip-b" aria-describedby="tip-c1" aria-expanded="false">CEFR C1</button><span class="tip-box" id="tip-c1" role="tooltip"><b>CEFR C1은 어느 정도인가요?</b>CEFR은 유럽에서 만든 외국어 능력 기준입니다. A1부터 C2까지 여섯 단계가 있고, C1은 위에서 두 번째입니다. 길고 까다로운 글을 숨은 뜻까지 이해하고, 학업과 업무에서 영어를 막힘없이 쓰는 수준입니다.</span></span> 인증</dd><dt>지도</dt><dd>고등 전문 과외 4년 (수능, 외고 입시, 영어 특기자 전형)</dd><dt>번역</dt><dd>글로벌 OTT 플랫폼 영한 자막 15년 이상</dd><dt>실무</dt><dd>미국 실리콘밸리 현지화 전문 기업 7년 이상</dd></dl>
  </div>
 </section>
 <section class="facts"><div class="wrap"><div><span>대상</span><b>초등 고학년부터 중학생</b></div><div><span>수업</span><b>원장이 직접 가르치는 소수 정원</b></div><div><span>장소</span><b>원주기업도시</b></div><div><span>시작</span><b>상담 신청서와 레벨테스트</b></div></div></section>
@@ -161,5 +161,12 @@ if(!list||!list.length)return;
 var ok=list.filter(function(p){return p&&p.title&&/^https:\/\/blog\.naver\.com\//.test(p.link||'')}).slice(0,5);if(ok.length<3)return;
 box.innerHTML=ok.map(function(p,i){return '<div class="card'+(i===0?' ft':'')+'"><div class="tile t-p">'+(/^img\/blog\/[\w.\-]+$/.test(p.img||'')?'<img src="'+esc(p.img)+'" alt="" loading="lazy">':'')+'</div><div class="bd"><div class="lab">'+esc(p.cat)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p><div class="more">읽기<span class="ar">→</span></div></div><a class="st" href="'+esc(p.link)+'" target="_blank" rel="noopener" aria-label="'+esc(p.title)+'"></a></div>'}).join('');
 }).catch(function(){});})();
+</script>
+<script>
+(function(){var ts=document.querySelectorAll('.tip');if(!ts.length)return;
+function shut(x){ts.forEach(function(t){if(t!==x){t.classList.remove('on');t.querySelector('.tip-b').setAttribute('aria-expanded','false')}})}
+ts.forEach(function(t){var b=t.querySelector('.tip-b');b.addEventListener('click',function(e){e.stopPropagation();shut(t);var on=t.classList.toggle('on');b.setAttribute('aria-expanded',on?'true':'false')})});
+document.addEventListener('click',function(){shut(null)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){shut(null);if(document.activeElement&&document.activeElement.classList.contains('tip-b'))document.activeElement.blur()}})})();
 </script>
 </body></html>

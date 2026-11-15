@@ -638,3 +638,13 @@ section.s.dark{background:var(--gd);color:#fff}
  .posters img{flex:0 0 30%}
  .lr{padding:32px 0}
 }
+
+/* tooltip (bio) */
+.bio dd{position:relative}
+.tip-b{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:help;border-bottom:1px dotted var(--g);border-radius:0;-webkit-tap-highlight-color:transparent}
+.tip-b::after{content:"?";display:inline-block;width:16px;height:16px;margin-left:5px;border-radius:50%;background:var(--g);color:#fff;font-size:11px;font-weight:800;line-height:16px;text-align:center;vertical-align:2px}
+.tip-b:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.tip-box{position:absolute;left:0;bottom:calc(100% + 8px);width:min(340px,100%);background:var(--gd);color:#fff;font-size:13.5px;font-weight:400;line-height:1.65;padding:13px 15px;border-radius:8px;box-shadow:0 12px 26px -12px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s,transform .15s,visibility .15s;z-index:30;text-align:left}
+.tip-box b{display:block;font-weight:800;margin-bottom:3px}
+.tip.on .tip-box,.tip:focus-within .tip-box{opacity:1;visibility:visible;transform:none}
+@media (hover:hover){.tip:hover .tip-box{opacity:1;visibility:visible;transform:none}}
