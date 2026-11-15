@@ -648,3 +648,6 @@ section.s.dark{background:var(--gd);color:#fff}
 .tip-box b{display:block;font-weight:800;margin-bottom:3px}
 .tip.on .tip-box,.tip:focus-within .tip-box{opacity:1;visibility:visible;transform:none}
 @media (hover:hover){.tip:hover .tip-box{opacity:1;visibility:visible;transform:none}}
+
+/* 11/15 교재 칸 정렬: 여러 줄일 때 위에서부터 채우기 */
+.tbm-r .c{align-items:flex-start;align-content:flex-start}
