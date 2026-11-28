@@ -303,7 +303,7 @@ section.cta + .ft,section.cta3 + .ft,main + .ft{border-top:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
 /* 교재 시리즈 펼치기 */
-.tbm-note{margin-top:22px;font-size:14px;color:var(--sub)}
+.tbm-note{margin-top:34px;font-size:14px;color:var(--sub);text-align:center}
 .tbm-r .c .tbs{line-height:0;padding:0;margin:0;border:0;background:none;cursor:pointer;position:relative;display:block;font:inherit}
 .tbm-r .c .tbs[data-n]:after{content:attr(data-n);position:absolute;right:-5px;bottom:-5px;background:var(--c);color:#fff;font-size:10.5px;line-height:1;padding:4px 5px;letter-spacing:.02em}
 .tbm-r .c .tbs.on img{transform:translateY(-6px);outline:2px solid var(--c);outline-offset:3px}
@@ -332,4 +332,15 @@ body.jk-edit .tbx-all .tbx-x{display:none}
 .tbx-d p{padding:0;max-width:none;font-size:15.5px;line-height:1.85}
 .tbx-d p span{display:block;font-size:12.5px;letter-spacing:.14em;color:var(--c);margin-bottom:6px}
 @media (max-width:980px){.tbx-d{grid-template-columns:1fr;gap:16px 0;padding-left:0;padding-right:0}}
+
+.tbm-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:44px 0 0;border-top:1px solid var(--ink)}
+.tbm-steps > div{padding:22px 24px 4px;border-left:1px solid var(--line)}
+.tbm-steps > div:first-child{border-left:0;padding-left:0}
+.tbm-steps i{font-style:normal;font-size:13px;letter-spacing:.18em;color:var(--c)}
+.tbm-steps b{display:block;font-weight:500;font-size:19px;margin:6px 0 6px}
+.tbm-steps span{display:block;font-size:15px;color:var(--sub);line-height:1.75}
+.tbm-t{font-weight:500;font-size:23px;margin-top:84px;line-height:1.4}
+.tbm-t span{display:block;font-size:14px;letter-spacing:.06em;color:var(--sub);margin-top:6px}
+.tbm-t + .tbm{margin-top:22px}
+@media (max-width:980px){.tbm-steps{grid-template-columns:1fr}.tbm-steps > div{border-left:0;padding:18px 0 0}.tbm-t{font-size:20px;margin-top:60px}}
 @media (prefers-reduced-motion:reduce){.tbx-v figure,.tbx-slot{animation:none}}
