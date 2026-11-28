@@ -327,4 +327,9 @@ body.jk-edit .tbx-all:before{content:'교재 설명 (표지를 누르면 펼쳐�
 body.jk-edit .tbx-all .tbx{display:block;border-bottom:1px solid var(--line);padding-bottom:6px}
 body.jk-edit .tbx-all .tbx-x{display:none}
 @media (max-width:980px){.tbx-h,.tbx p,.tbx-v{padding-left:0;padding-right:0}.tbx-slot{background:none;margin-bottom:14px}.tbx-v img{height:122px}.tbx-h b{font-size:18px}}
+
+.tbx-d{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;padding:16px 26px 0;max-width:1120px}
+.tbx-d p{padding:0;max-width:none;font-size:15.5px;line-height:1.85}
+.tbx-d p span{display:block;font-size:12.5px;letter-spacing:.14em;color:var(--c);margin-bottom:6px}
+@media (max-width:980px){.tbx-d{grid-template-columns:1fr;gap:16px 0;padding-left:0;padding-right:0}}
 @media (prefers-reduced-motion:reduce){.tbx-v figure,.tbx-slot{animation:none}}
