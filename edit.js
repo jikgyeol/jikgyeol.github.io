@@ -196,6 +196,17 @@
   }).catch(function () { ready = true; });
 
   function clean(c) {
+    /* 글자 칸 안에 브라우저가 만든 div·p를 줄바꿈으로 바꿉니다 (p 안의 div는 문단을 깨뜨림) */
+    [].forEach.call(c.querySelectorAll('p[data-jk-txt],h1[data-jk-txt],h2[data-jk-txt],h3[data-jk-txt],h4[data-jk-txt],summary[data-jk-txt],figcaption[data-jk-txt],span[data-jk-txt],b[data-jk-txt],a[data-jk-txt],i[data-jk-txt],em[data-jk-txt],strong[data-jk-txt]'), function (t) {
+      [].slice.call(t.querySelectorAll('div,p')).forEach(function (b) {
+        var f = document.createDocumentFragment();
+        if (b.previousSibling && !(b.previousSibling.nodeType === 1 && b.previousSibling.localName === 'br')) f.appendChild(document.createElement('br'));
+        while (b.firstChild) f.appendChild(b.firstChild);
+        if (f.lastChild && f.lastChild.nodeType === 1 && f.lastChild.localName === 'br' && b.nextSibling) f.removeChild(f.lastChild);
+        b.parentNode.replaceChild(f, b);
+      });
+      while (t.lastChild && t.lastChild.nodeType === 1 && t.lastChild.localName === 'br') t.removeChild(t.lastChild);
+    });
     [].forEach.call(c.querySelectorAll('[data-jk-ui]'), function (e) { e.remove(); });
     [].forEach.call(c.querySelectorAll('[contenteditable],[data-jk-txt],[spellcheck]'), function (e) { e.removeAttribute('contenteditable'); e.removeAttribute('data-jk-txt'); e.removeAttribute('spellcheck'); });
     [].forEach.call(c.querySelectorAll('.jk-cur'), function (e) { e.classList.remove('jk-cur'); });
